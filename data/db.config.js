@@ -1,8 +1,8 @@
 module.exports = {
-  HOST: "localhost",
-  USER: "root",
-  PASSWORD: "12345678",
-  DB: "testdb",
+  HOST: "localhost:3306",
+  USER: "willitek_root",
+  PASSWORD: "V2Rz8viXPLk4K9sNBxFm",
+  DB: "willitek_TestDB",
   dialect: "mysql",
   pool: {
     max: 5,

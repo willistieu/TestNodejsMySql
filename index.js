@@ -3,6 +3,7 @@ const app = express();
 const dotenv = require("dotenv");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const { connectDB, sequelize } = require("./data/db");
 
 const port = 3000;
 
@@ -15,6 +16,10 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.listen(port, () => {
+app.listen(port, async () => {
   console.log(`Example app listening on port ${port}!`);
+  await connectDB();
+  sequelize.sync({ force: false }).then(() => {
+    console.log("Synced database successfully...");
+  });
 });
