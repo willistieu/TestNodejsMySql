@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, async () => {
-  console.log(`Example app listening on port ${port}!`);
+  console.log(`App listening on port ${port}!`);
   await connectDB();
   sequelize.sync({ force: false }).then(() => {
     console.log("Synced database successfully...");
